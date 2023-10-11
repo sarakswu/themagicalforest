@@ -22,49 +22,64 @@ while status:
         break
     else:
         print("Invalid, please select 1 or 2")  
-hp=(stats[0])
-dex=(stats[1])
-intel=(stats[2])
-magic=(stats[3])
-dmg=2
+quest=True
+while quest==True:
+    hp=(stats[0])
+    dex=(stats[1])
+    intel=(stats[2])
+    magic=(stats[3])
+    dmg=2
+    response="N"
+    print("To enter, prove your worth to The Gatekeeper Owl with an intelligence of 4 or higher")
+    challenge1result=False
+    while challenge1result==False:
+        challenge1result=game.challenge1(intel)
+        if challenge1result==False:
+            newhp=game.deducthp(hp,dmg)
+            print("lost hp",newhp)
+            hp=newhp
+            if hp <= 0:
+                print("you died")
+                response=input("Would you like to try again? Y/N ").upper()
+                if response != "Y":
+                    break
+    if response == "Y":
+        continue
 
-print("To enter, prove your worth to The Gatekeeper Owl with an intelligence of 4 or higher")
-challenge1result=False
-while challenge1result==False:
-    challenge1result=game.challenge1(intel)
-    if challenge1result==False:
-        newhp=game.deducthp(hp,dmg)
-        print("lost hp",newhp)
-        hp=newhp
-        if hp <= 0:
-            print("you died")
-            exit(1)
+    print("CHALLENGE 1 COMPLETED")
+    print("Now pass The Werewolf Den without distrubing the cubs with a dexterity of 3 or higher")
+    challenge2result=False
+    while challenge2result==False:
+        challenge2result=game.challenge2(dex)
+        if challenge2result==False:
+            newhp=game.deducthp(hp,dmg)
+            print("lost hp",newhp)
+            hp=newhp
+            if hp <= 0:
+                print("you died")
+                response=input("Would you like to try again? Y/N ").upper()
+                if response != "Y":
+                    break
+    if response == "Y":
+        continue
 
-print("CHALLENGE 1 COMPLETED")
-print("Now pass The Werewolf Den without distrubing the cubs with a dexterity of 3 or higher")
-challenge2result=False
-while challenge2result==False:
-    challenge2result=game.challenge2(dex)
-    if challenge2result==False:
-        newhp=game.deducthp(hp,dmg)
-        print("lost hp",newhp)
-        hp=newhp
-        if hp <= 0:
-            print("you died")
-            exit(1)
-
-print("CHALLENGE 2 COMPLETED")
-print("The Golden Goose is locked behind a magic door. Unlock the door with magic of 5 or higher")
-challenge3result=False
-while challenge3result==False:
-    challenge3result=game.challenge3(magic)
-    if challenge3result==False:
-        newhp=game.deducthp(hp,dmg)
-        print("lost hp",newhp)
-        hp=newhp
-        if hp <= 0:
-            print("you died")
-            exit(1)
-
-print("CHALLENGE 3 COMPLETED")
-print("You win")
+    print("CHALLENGE 2 COMPLETED")
+    print("The Golden Goose is locked behind a magic door. Unlock the door with magic of 5 or higher")
+    challenge3result=False
+    while challenge3result==False:
+        challenge3result=game.challenge3(magic)
+        if challenge3result==False:
+            newhp=game.deducthp(hp,dmg)
+            print("lost hp",newhp)
+            hp=newhp
+            if hp <= 0:
+                print("you died")
+                response=input("Would you like to try again? Y/N ").upper()
+                if response != "Y":
+                    break
+    if response == "Y":
+        continue
+    if challenge1result and challenge2result and challenge3result:
+        print("CHALLENGE 3 COMPLETED")
+        print("You win")
+    quest=False
