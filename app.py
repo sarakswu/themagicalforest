@@ -7,9 +7,11 @@ import elf
 import game
 
 #intro
+print("PROG10004 Assignment #1\n")
 name=input("Please provide your name: ")
-print("Welcome to The Magical Forest", name)
-print("You must retrieve The Golden Goose from the heart of the forest!\n")
+print("\nWelcome to The Magical Forest", name)
+print("\nYou must retrieve The Golden Goose from the heart of the forest!\n")
+print("Rules: You must pass each challenge. If you lose all your hearts, you will die and have to restart.\n")
 
 #role selection
 print("These are the available classes")
