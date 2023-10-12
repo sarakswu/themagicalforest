@@ -1,3 +1,8 @@
+#fairy stats and attributes
+
+
+
+
 def setFairy():
     hp=5
     dex=1
@@ -5,4 +10,3 @@ def setFairy():
     magic=2
     list=[hp,dex,intel,magic]
     return list
-

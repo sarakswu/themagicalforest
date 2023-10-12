@@ -1,3 +1,7 @@
+#the interactiviy with the user
+
+
+
 import fairy
 import elf
 import game

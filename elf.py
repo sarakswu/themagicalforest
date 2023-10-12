@@ -1,3 +1,7 @@
+#elf stats and attributes
+
+
+
 def setElf():
     hp=5
     dex=(-1)

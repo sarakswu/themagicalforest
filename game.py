@@ -1,3 +1,9 @@
+#implements of the game
+#challenges and health rules
+
+
+
+
 import random
 
 
@@ -7,9 +13,9 @@ def challenge1(intel):
         lvl=random.randint(1,6)
         challenge_1 = intel + lvl
         if challenge_1 < 4:
-            return False
+            return False, lvl
         else:
-            return True
+            return True, lvl
         
 def challenge2(dex):
     challenge_2=0
@@ -17,9 +23,9 @@ def challenge2(dex):
         lvl=random.randint(1,6)
         challenge_2 = dex + lvl
         if challenge_2 < 3:
-            return False
+            return False, lvl
         else:
-            return True
+            return True, lvl
         
 def challenge3(magic):
     challenge_3=0
@@ -27,9 +33,9 @@ def challenge3(magic):
         lvl=random.randint(1,6)
         challenge_3 = magic + lvl
         if challenge_3 < 5:
-            return False
+            return False, lvl
         else:
-            return True
+            return True, lvl
         
 
 def deducthp(hp,dmg):
