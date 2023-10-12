@@ -44,7 +44,7 @@ while quest==True:
     while challenge1result==False:
         challenge1result, dice = game.challenge1(intel) #implementing challenge 1
         print("You've rolled a", dice)
-        print("Your current intelligence is", intel)
+        print("Your current intelligence is", (dice+intel))
         if challenge1result==False:
             newhp=game.deducthp(hp,dmg) #implementing damage if challenge is failed
             print("You lost 2 hearts, remaining hearts", newhp, "\n")
@@ -63,7 +63,7 @@ while quest==True:
     while challenge2result==False:
         challenge2result, dice = game.challenge2(dex) #implementing challenge 2
         print("You've rolled a", dice)
-        print("Your current dexterity is", dex)
+        print("Your current dexterity is", (dice+dex))
         if challenge2result==False:
             newhp=game.deducthp(hp,dmg) #implementing damage if challenge is failed
             print("You lost 2 hearts, remaining hearts", newhp, "\n")
@@ -82,7 +82,7 @@ while quest==True:
     while challenge3result==False:
         challenge3result, dice = game.challenge3(magic) #implementing challenge 3
         print("You've rolled a", dice)
-        print("Your current magic is", magic)
+        print("Your current magic is", (dice+magic))
         if challenge3result==False:
             newhp=game.deducthp(hp,dmg) #implementing damage if challenge is failed
             print("You lost 2 hearts, remaining hearts", newhp, "\n")
